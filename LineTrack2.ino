@@ -166,8 +166,7 @@ void loop() {
   }
   if (dir == DIR_STOP) {
     digitalWrite(LED, HIGH); // signal that we're lost
-    if (retry++ < MAX_RETRY) dir = last_dir; // let's try the previous maneuver one more time
-    else retry = 0;
+    dir = last_dir; // let's try the previous maneuver one more time
   }
   else digitalWrite(LED, LOW);
   runMotors(dir, DEFAULT_SPEED);
